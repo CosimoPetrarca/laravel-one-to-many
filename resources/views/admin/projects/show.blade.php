@@ -11,7 +11,8 @@
     @if ($project->image)
     <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}">
     @endif
-        <p><strong>Descrizione Progetto:</strong> {{ $project->description }}</p>
+    <p><strong>Descrizione Progetto:</strong> {{ $project->description }}</p>
+    <p><strong>Categoria:</strong> {{ $project->type?->name ?: 'Categoria non presente' }}</p>
     <p><strong>Data inizio Progetto:</strong> {{ $project->start_date }}</p>
     <p><strong>Data fine Progetto:</strong> {{ $project->end_date }}</p>
     <p><strong>Slug:</strong> {{ $project->slug }}</p>
