@@ -17,9 +17,11 @@ class ProjectSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
+        Project::truncate();
+
         for($i = 0; $i < 10; $i++) {
             $new_project = new Project();
-            $new_project->title = $faker->sentence(2);
+            $new_project->title = $faker->sentence(1);
             $new_project->description = $faker->sentence();
             $new_project->start_date = $faker->dateTime();
             $new_project->end_date = $faker->dateTimeInInterval($new_project->start_date, '+20 weeks');
